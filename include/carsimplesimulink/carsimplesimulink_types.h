@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'carsimplesimulink'.
 //
-// Model version                  : 1.5
+// Model version                  : 1.9
 // Simulink Coder version         : 9.8 (R2022b) 13-May-2022
-// C/C++ source code generated on : Thu Oct 26 09:54:45 2023
+// C/C++ source code generated on : Mon Nov  6 19:23:58 2023
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -29,6 +29,29 @@ struct SL_Bus_carsimplesimulink_std_msgs_Float64
 };
 
 #endif
+
+#ifndef struct_f_robotics_slcore_internal_bl_T
+#define struct_f_robotics_slcore_internal_bl_T
+
+struct f_robotics_slcore_internal_bl_T
+{
+  int32_T __dummy;
+};
+
+#endif                                // struct_f_robotics_slcore_internal_bl_T
+
+#ifndef struct_ros_slros_internal_block_GetP_T
+#define struct_ros_slros_internal_block_GetP_T
+
+struct ros_slros_internal_block_GetP_T
+{
+  boolean_T matlabCodegenIsDeleted;
+  int32_T isInitialized;
+  boolean_T isSetupComplete;
+  f_robotics_slcore_internal_bl_T SampleTimeHandler;
+};
+
+#endif                                // struct_ros_slros_internal_block_GetP_T
 
 #ifndef struct_ros_slroscpp_internal_block_P_T
 #define struct_ros_slroscpp_internal_block_P_T

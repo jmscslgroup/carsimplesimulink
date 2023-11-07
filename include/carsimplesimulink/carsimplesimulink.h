@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'carsimplesimulink'.
 //
-// Model version                  : 1.5
+// Model version                  : 1.9
 // Simulink Coder version         : 9.8 (R2022b) 13-May-2022
-// C/C++ source code generated on : Thu Oct 26 09:54:45 2023
+// C/C++ source code generated on : Mon Nov  6 19:23:58 2023
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -145,31 +145,40 @@
 
 // Block signals (default storage)
 struct B_carsimplesimulink_T {
+  real_T Saturation;                   // '<Root>/Saturation'
   real_T TransferFcn;                  // '<Root>/Transfer Fcn'
-  SL_Bus_carsimplesimulink_std_msgs_Float64 In1;// '<S4>/In1'
+  SL_Bus_carsimplesimulink_std_msgs_Float64 In1;// '<S6>/In1'
 };
 
 // Block states (default storage) for system '<Root>'
 struct DW_carsimplesimulink_T {
-  ros_slroscpp_internal_block_P_T obj; // '<S2>/SinkBlock'
-  ros_slroscpp_internal_block_S_T obj_e;// '<S3>/SourceBlock'
+  ros_slros_internal_block_GetP_T obj; // '<Root>/Get Parameter1'
+  ros_slros_internal_block_GetP_T obj_k;// '<Root>/Get Parameter'
+  ros_slroscpp_internal_block_P_T obj_l;// '<S4>/SinkBlock'
+  ros_slroscpp_internal_block_P_T obj_j;// '<S3>/SinkBlock'
+  ros_slroscpp_internal_block_S_T obj_e;// '<S5>/SourceBlock'
+  int_T Integrator_IWORK;              // '<Root>/Integrator'
+  int_T Integrator1_IWORK;             // '<Root>/Integrator1'
 };
 
 // Continuous states (default storage)
 struct X_carsimplesimulink_T {
   real_T Integrator_CSTATE;            // '<Root>/Integrator'
+  real_T Integrator1_CSTATE;           // '<Root>/Integrator1'
   real_T TransferFcn_CSTATE;           // '<Root>/Transfer Fcn'
 };
 
 // State derivatives (default storage)
 struct XDot_carsimplesimulink_T {
   real_T Integrator_CSTATE;            // '<Root>/Integrator'
+  real_T Integrator1_CSTATE;           // '<Root>/Integrator1'
   real_T TransferFcn_CSTATE;           // '<Root>/Transfer Fcn'
 };
 
 // State disabled
 struct XDis_carsimplesimulink_T {
   boolean_T Integrator_CSTATE;         // '<Root>/Integrator'
+  boolean_T Integrator1_CSTATE;        // '<Root>/Integrator1'
   boolean_T TransferFcn_CSTATE;        // '<Root>/Transfer Fcn'
 };
 
@@ -189,14 +198,14 @@ struct P_carsimplesimulink_T_ {
   SL_Bus_carsimplesimulink_std_msgs_Float64 Constant_Value;// Computed Parameter: Constant_Value
                                                               //  Referenced by: '<S1>/Constant'
 
+  SL_Bus_carsimplesimulink_std_msgs_Float64 Constant_Value_o;// Computed Parameter: Constant_Value_o
+                                                                //  Referenced by: '<S2>/Constant'
+
   SL_Bus_carsimplesimulink_std_msgs_Float64 Out1_Y0;// Computed Parameter: Out1_Y0
-                                                       //  Referenced by: '<S4>/Out1'
+                                                       //  Referenced by: '<S6>/Out1'
 
   SL_Bus_carsimplesimulink_std_msgs_Float64 Constant_Value_j;// Computed Parameter: Constant_Value_j
-                                                                //  Referenced by: '<S3>/Constant'
-
-  real_T Integrator_IC;                // Expression: 0
-                                          //  Referenced by: '<Root>/Integrator'
+                                                                //  Referenced by: '<S5>/Constant'
 
   real_T Saturation_UpperSat;          // Expression: 80
                                           //  Referenced by: '<Root>/Saturation'
@@ -224,8 +233,8 @@ struct tag_RTM_carsimplesimulink_T {
   boolean_T zCCacheNeedsReset;
   boolean_T derivCacheNeedsReset;
   boolean_T CTOutputIncnstWithState;
-  real_T odeY[2];
-  real_T odeF[3][2];
+  real_T odeY[3];
+  real_T odeF[3][3];
   ODE3_IntgData intgData;
 
   //
@@ -249,6 +258,7 @@ struct tag_RTM_carsimplesimulink_T {
     uint32_T clockTick0;
     time_T stepSize0;
     uint32_T clockTick1;
+    boolean_T firstInitCondFlag;
     SimTimeStep simTimeStep;
     boolean_T stopRequestedFlag;
     time_T *t;
@@ -347,9 +357,11 @@ extern volatile boolean_T runModel;
 //
 //  '<Root>' : 'carsimplesimulink'
 //  '<S1>'   : 'carsimplesimulink/Blank Message'
-//  '<S2>'   : 'carsimplesimulink/Publish'
-//  '<S3>'   : 'carsimplesimulink/Subscribe'
-//  '<S4>'   : 'carsimplesimulink/Subscribe/Enabled Subsystem'
+//  '<S2>'   : 'carsimplesimulink/Blank Message1'
+//  '<S3>'   : 'carsimplesimulink/Publish'
+//  '<S4>'   : 'carsimplesimulink/Publish1'
+//  '<S5>'   : 'carsimplesimulink/Subscribe'
+//  '<S6>'   : 'carsimplesimulink/Subscribe/Enabled Subsystem'
 
 #endif                                 // RTW_HEADER_carsimplesimulink_h_
 

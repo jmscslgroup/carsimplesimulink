@@ -71,7 +71,7 @@ target_compile_options(carsimplesimulink PUBLIC
   $<$<OR:$<COMPILE_LANGUAGE:CXX>,$<COMPILE_LANGUAGE:C>>:
   -DMODEL=carsimplesimulink
   -DNUMST=2
-  -DNCSTATES=2
+  -DNCSTATES=3
   -DHAVESTDIO
   -DMODEL_HAS_DYNAMICALLY_LOADED_SFCNS=0
   -DCLASSIC_INTERFACE=0
@@ -123,4 +123,4 @@ add_custom_command(
                    ARGS -E copy ${PROJECT_SOURCE_DIR}/src/${file_i} ${CATKIN_DEVEL_PREFIX}/carsimplesimulink_ert_rtw/${file_i}
 				   )
 endforeach(file_i)
-# Generated on Thu Oct 26 09:54:54 2023
+# Generated on Mon Nov 06 19:24:04 2023

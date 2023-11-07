@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'carsimplesimulink'.
 //
-// Model version                  : 1.5
+// Model version                  : 1.9
 // Simulink Coder version         : 9.8 (R2022b) 13-May-2022
-// C/C++ source code generated on : Thu Oct 26 09:54:45 2023
+// C/C++ source code generated on : Mon Nov  6 19:23:58 2023
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -27,24 +27,26 @@ P_carsimplesimulink_T carsimplesimulink_P = {
     0.0                                // Data
   },
 
+  // Computed Parameter: Constant_Value_o
+  //  Referenced by: '<S2>/Constant'
+
+  {
+    0.0                                // Data
+  },
+
   // Computed Parameter: Out1_Y0
-  //  Referenced by: '<S4>/Out1'
+  //  Referenced by: '<S6>/Out1'
 
   {
     0.0                                // Data
   },
 
   // Computed Parameter: Constant_Value_j
-  //  Referenced by: '<S3>/Constant'
+  //  Referenced by: '<S5>/Constant'
 
   {
     0.0                                // Data
   },
-
-  // Expression: 0
-  //  Referenced by: '<Root>/Integrator'
-
-  0.0,
 
   // Expression: 80
   //  Referenced by: '<Root>/Saturation'
