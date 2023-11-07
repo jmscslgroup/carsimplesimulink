@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'carsimplesimulink'.
 //
-// Model version                  : 1.9
+// Model version                  : 1.11
 // Simulink Coder version         : 9.8 (R2022b) 13-May-2022
-// C/C++ source code generated on : Mon Nov  6 19:23:58 2023
+// C/C++ source code generated on : Mon Nov  6 22:39:17 2023
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -48,10 +48,10 @@ P_carsimplesimulink_T carsimplesimulink_P = {
     0.0                                // Data
   },
 
-  // Expression: 80
+  // Expression: 40
   //  Referenced by: '<Root>/Saturation'
 
-  80.0,
+  40.0,
 
   // Expression: 0
   //  Referenced by: '<Root>/Saturation'

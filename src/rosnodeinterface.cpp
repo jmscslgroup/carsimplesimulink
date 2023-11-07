@@ -3,9 +3,9 @@
 //
 // Code generated for Simulink model 'carsimplesimulink'.
 //
-// Model version                  : 1.9
+// Model version                  : 1.11
 // Simulink Coder version         : 9.8 (R2022b) 13-May-2022
-// C/C++ source code generated on : Mon Nov 06 19:24:02 2023
+// C/C++ source code generated on : Mon Nov 06 22:39:21 2023
 //
 
 #ifdef _MSC_VER
