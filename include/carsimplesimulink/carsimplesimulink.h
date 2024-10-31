@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'carsimplesimulink'.
 //
-// Model version                  : 1.11
+// Model version                  : 1.12
 // Simulink Coder version         : 9.8 (R2022b) 13-May-2022
-// C/C++ source code generated on : Mon Nov  6 22:39:17 2023
+// C/C++ source code generated on : Thu Oct 31 12:07:42 2024
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -206,6 +206,12 @@ struct P_carsimplesimulink_T_ {
 
   SL_Bus_carsimplesimulink_std_msgs_Float64 Constant_Value_j;// Computed Parameter: Constant_Value_j
                                                                 //  Referenced by: '<S5>/Constant'
+
+  real_T Integrator_UpperSat;          // Expression: 40
+                                          //  Referenced by: '<Root>/Integrator'
+
+  real_T Integrator_LowerSat;          // Expression: 0
+                                          //  Referenced by: '<Root>/Integrator'
 
   real_T Saturation_UpperSat;          // Expression: 40
                                           //  Referenced by: '<Root>/Saturation'

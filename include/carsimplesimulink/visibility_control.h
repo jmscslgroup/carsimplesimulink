@@ -28,5 +28,5 @@
   #define CARSIMPLESIMULINK_PUBLIC_TYPE
 #endif
 #endif  // CARSIMPLESIMULINK__VISIBILITY_CONTROL_H_
-// Generated 06-Nov-2023 22:39:22
+// Generated 31-Oct-2024 12:07:57
 // Copyright 2019-2020 The MathWorks, Inc.

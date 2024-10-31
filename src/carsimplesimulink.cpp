@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'carsimplesimulink'.
 //
-// Model version                  : 1.11
+// Model version                  : 1.12
 // Simulink Coder version         : 9.8 (R2022b) 13-May-2022
-// C/C++ source code generated on : Mon Nov  6 22:39:17 2023
+// C/C++ source code generated on : Thu Oct 31 12:07:42 2024
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -140,8 +140,19 @@ void carsimplesimulink_step(void)
   // Integrator: '<Root>/Integrator' incorporates:
   //   MATLABSystem: '<Root>/Get Parameter'
 
+  // Limited  Integrator
   if (carsimplesimulink_DW.Integrator_IWORK != 0) {
     carsimplesimulink_X.Integrator_CSTATE = value;
+  }
+
+  if (carsimplesimulink_X.Integrator_CSTATE >=
+      carsimplesimulink_P.Integrator_UpperSat) {
+    carsimplesimulink_X.Integrator_CSTATE =
+      carsimplesimulink_P.Integrator_UpperSat;
+  } else if (carsimplesimulink_X.Integrator_CSTATE <=
+             carsimplesimulink_P.Integrator_LowerSat) {
+    carsimplesimulink_X.Integrator_CSTATE =
+      carsimplesimulink_P.Integrator_LowerSat;
   }
 
   // Saturate: '<Root>/Saturation' incorporates:
@@ -251,10 +262,24 @@ void carsimplesimulink_step(void)
 void carsimplesimulink_derivatives(void)
 {
   XDot_carsimplesimulink_T *_rtXdot;
+  boolean_T lsat;
+  boolean_T usat;
   _rtXdot = ((XDot_carsimplesimulink_T *) carsimplesimulink_M->derivs);
 
   // Derivatives for Integrator: '<Root>/Integrator'
-  _rtXdot->Integrator_CSTATE = carsimplesimulink_B.TransferFcn;
+  lsat = (carsimplesimulink_X.Integrator_CSTATE <=
+          carsimplesimulink_P.Integrator_LowerSat);
+  usat = (carsimplesimulink_X.Integrator_CSTATE >=
+          carsimplesimulink_P.Integrator_UpperSat);
+  if (((!lsat) && (!usat)) || (lsat && (carsimplesimulink_B.TransferFcn > 0.0)) ||
+      (usat && (carsimplesimulink_B.TransferFcn < 0.0))) {
+    _rtXdot->Integrator_CSTATE = carsimplesimulink_B.TransferFcn;
+  } else {
+    // in saturation
+    _rtXdot->Integrator_CSTATE = 0.0;
+  }
+
+  // End of Derivatives for Integrator: '<Root>/Integrator'
 
   // Derivatives for Integrator: '<Root>/Integrator1'
   _rtXdot->Integrator1_CSTATE = carsimplesimulink_B.Saturation;
